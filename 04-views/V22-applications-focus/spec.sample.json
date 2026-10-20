@@ -1,0 +1,94 @@
+{
+  "id": "scene-21",
+  "intent": {
+    "type": "count",
+    "filters": {
+      "country": "IN"
+    }
+  },
+  "template": "focus",
+  "title": "Applications",
+  "subtitle": "Application volume · From India",
+  "focusKey": "apps-hero",
+  "presence": "dissolved",
+  "components": [
+    {
+      "spec": {
+        "kind": "metric",
+        "key": "apps-hero",
+        "label": "Applications",
+        "value": 1422,
+        "format": "count",
+        "icon": "applications",
+        "accent": "#4f9cff",
+        "hero": true,
+        "caption": "from India"
+      },
+      "slot": "hero"
+    },
+    {
+      "spec": {
+        "kind": "bars",
+        "key": "status-bars",
+        "title": "Current status",
+        "basis": "applications",
+        "format": "count",
+        "accent": "#3ed6a0",
+        "items": [
+          {
+            "key": "processing",
+            "label": "In processing",
+            "value": 360
+          },
+          {
+            "key": "approved",
+            "label": "Approved",
+            "value": 894
+          },
+          {
+            "key": "rejected",
+            "label": "Rejected",
+            "value": 122
+          },
+          {
+            "key": "closed",
+            "label": "Closed · other",
+            "value": 46
+          }
+        ]
+      },
+      "slot": "right"
+    },
+    {
+      "spec": {
+        "kind": "metric",
+        "key": "in-proc",
+        "label": "In processing",
+        "value": 360,
+        "format": "count",
+        "icon": "processing",
+        "accent": "#4fd6ff",
+        "caption": "awaiting a final decision"
+      },
+      "slot": "left1"
+    },
+    {
+      "spec": {
+        "kind": "metric",
+        "key": "approval-rate",
+        "label": "Approval rate",
+        "value": 88,
+        "format": "percent",
+        "icon": "approved",
+        "accent": "#3ed6a0",
+        "caption": "of decided applications"
+      },
+      "slot": "left2"
+    }
+  ],
+  "spoken": "There are 1,422 applications from India. 360 are in processing, 894 approved and 122 rejected.",
+  "summary": {
+    "primary": "1,422 applications from India.",
+    "secondary": "360 in processing · 894 approved · 122 rejected."
+  }
+}

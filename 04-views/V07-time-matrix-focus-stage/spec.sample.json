@@ -1,0 +1,118 @@
+{
+  "id": "scene-6",
+  "intent": {
+    "type": "timeMatrix",
+    "channel": "online",
+    "filters": {},
+    "stage": "to-icp"
+  },
+  "template": "matrix",
+  "title": "Online Visas Processing Time Matrix",
+  "subtitle": "Executive view of total online visa processing times",
+  "focusKey": "tm",
+  "presence": "core",
+  "components": [
+    {
+      "spec": {
+        "kind": "timeMatrix",
+        "key": "tm",
+        "scopeLabel": "online applications",
+        "avg": 3.8,
+        "avgDelta": -4.2,
+        "median": 3.1,
+        "medianDelta": 4.3,
+        "p90": 6.2,
+        "applications": 8412,
+        "hourly": [
+          19,
+          29,
+          32,
+          26,
+          17,
+          29,
+          28,
+          26,
+          17,
+          20,
+          29,
+          31
+        ],
+        "fastest": {
+          "key": "payment",
+          "label": "Payment",
+          "icon": "payment",
+          "accent": "#5aa8ff",
+          "days": 0.2
+        },
+        "longest": {
+          "key": "icp-final",
+          "label": "ICP Final Review",
+          "icon": "documents",
+          "accent": "#a67cff",
+          "days": 1.4
+        },
+        "stages": [
+          {
+            "key": "subpay",
+            "label": "Submission & Payment",
+            "icon": "submit",
+            "accent": "#4f9cff",
+            "days": 0.6
+          },
+          {
+            "key": "vas-review",
+            "label": "VAS Internal Review",
+            "icon": "review",
+            "accent": "#4f9cff",
+            "days": 0.5
+          },
+          {
+            "key": "icp-pre",
+            "label": "ICP Pre-Biometric",
+            "icon": "checkin",
+            "accent": "#a67cff",
+            "days": 0.8
+          },
+          {
+            "key": "bio",
+            "label": "Applicant Biometric Window",
+            "icon": "biometric",
+            "accent": "#4f9cff",
+            "days": 0.5
+          },
+          {
+            "key": "icp-final",
+            "label": "ICP Final Review",
+            "icon": "documents",
+            "accent": "#a67cff",
+            "days": 1.4
+          }
+        ],
+        "focusStage": "icp-pre",
+        "tabs": [
+          {
+            "label": "All Online Visas",
+            "ask": "online visa processing time matrix",
+            "active": true
+          },
+          {
+            "label": "By Country",
+            "ask": "which countries are slowest"
+          },
+          {
+            "label": "By Center",
+            "ask": "which centres are slowest"
+          }
+        ],
+        "sla": null,
+        "previewNote": "Biometric stage split · design preview"
+      },
+      "slot": "stage"
+    }
+  ],
+  "spoken": "Online applications take 3.8 days on average end to end, with a median of 3.1 days and 90 percent finishing within 6.2 days. ICP Pre-Biometric averages 0.8 days, out of 3.8 days end to end.",
+  "summary": {
+    "primary": "ICP Pre-Biometric: 0.8 days on average.",
+    "secondary": "Median 3.1 days · P90 6.2 days · longest stage ICP Final Review (1.4 days)."
+  }
+}

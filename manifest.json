@@ -1,0 +1,2148 @@
+{
+  "name": "ODIN Oct ver03 Nasir - Engineering Handover",
+  "version": "ver03 (0.3.0)",
+  "generated": "2026-10-16T13:34:16.408Z",
+  "referenceApp": "01-reference-app",
+  "previewUrl": "http://localhost:5173/?view={id}",
+  "effects": [
+    {
+      "id": "E00",
+      "title": "3D canvas layer (Stage)",
+      "folder": "03-effects/E00-canvas-layer",
+      "deps": [
+        "three",
+        "@react-three/fiber",
+        "@react-three/drei"
+      ],
+      "files": [
+        "src/scene/Stage.tsx",
+        "src/state/store.ts",
+        "src/lib/layout.ts",
+        "src/lib/motion.ts"
+      ]
+    },
+    {
+      "id": "E01",
+      "title": "Morph transitions (six choreographies)",
+      "folder": "03-effects/E01-morph",
+      "deps": [
+        "gsap"
+      ],
+      "files": [
+        "src/odin/director.ts",
+        "src/odin/experience.ts",
+        "src/lib/motion.ts"
+      ]
+    },
+    {
+      "id": "E02",
+      "title": "Transition particles",
+      "folder": "03-effects/E02-particles",
+      "deps": [
+        "three",
+        "@react-three/fiber"
+      ],
+      "files": [
+        "src/scene/TransitionParticles.tsx",
+        "src/odin/fx.ts",
+        "src/lib/layout.ts"
+      ]
+    },
+    {
+      "id": "E03",
+      "title": "ODIN globe + speaking aura",
+      "folder": "03-effects/E03-globe-aura",
+      "deps": [
+        "three",
+        "@react-three/fiber"
+      ],
+      "files": [
+        "src/scene/globe/OdinGlobe.tsx",
+        "src/scene/globe/geometry.ts",
+        "src/scene/SpectrumAura.tsx",
+        "src/lib/aura.ts",
+        "src/odin/experience.ts",
+        "src/audio/odinAudio.ts"
+      ]
+    },
+    {
+      "id": "E04",
+      "title": "3D objects on HTML placeholders",
+      "folder": "03-effects/E04-3d-objects",
+      "deps": [
+        "three",
+        "@react-three/fiber",
+        "@react-three/drei",
+        "d3-geo",
+        "topojson-client",
+        "world-atlas"
+      ],
+      "files": [
+        "src/odin/fx.ts",
+        "src/ui/scene/components/shared.tsx",
+        "src/scene/Donut3D.tsx",
+        "src/scene/earth/Earth3D.tsx",
+        "src/scene/orb/GlassOrb3D.tsx",
+        "src/scene/plinth/Plinths3D.tsx",
+        "src/scene/journey/Journey3D.tsx",
+        "src/scene/journey/objects.tsx",
+        "src/scene/journey/CrystalIcon.tsx"
+      ]
+    },
+    {
+      "id": "E05",
+      "title": "Energy streams",
+      "folder": "03-effects/E05-energy-streams",
+      "deps": [],
+      "files": [
+        "src/ui/home/EnergyStreams.tsx",
+        "src/ui/home/home.css"
+      ]
+    },
+    {
+      "id": "E06",
+      "title": "Environment: room, blur, camera push",
+      "folder": "03-effects/E06-environment",
+      "deps": [
+        "three",
+        "@react-three/fiber",
+        "@react-three/drei"
+      ],
+      "files": [
+        "src/scene/EnvironmentLayers.tsx",
+        "src/scene/CameraRig.tsx",
+        "src/lib/envFit.ts",
+        "src/lib/intro.ts"
+      ]
+    },
+    {
+      "id": "E07",
+      "title": "Post-FX glow",
+      "folder": "03-effects/E07-post-fx",
+      "deps": [
+        "@react-three/postprocessing",
+        "postprocessing"
+      ],
+      "files": [
+        "src/scene/PostFX.tsx"
+      ]
+    },
+    {
+      "id": "E08",
+      "title": "Count-up numbers",
+      "folder": "03-effects/E08-count-up",
+      "deps": [],
+      "files": [
+        "src/ui/NumberRoll.tsx",
+        "src/ui/scene/components/shared.tsx",
+        "src/lib/format.ts"
+      ]
+    },
+    {
+      "id": "E09",
+      "title": "Sound",
+      "folder": "03-effects/E09-sound",
+      "deps": [],
+      "files": [
+        "src/audio/morphSfx.ts",
+        "src/audio/odinAudio.ts"
+      ]
+    },
+    {
+      "id": "E10",
+      "title": "Intro load-in",
+      "folder": "03-effects/E10-intro",
+      "deps": [
+        "gsap"
+      ],
+      "files": [
+        "src/ui/IntroDirector.tsx",
+        "src/ui/intro.css",
+        "src/lib/intro.ts"
+      ]
+    },
+    {
+      "id": "E11",
+      "title": "Screen composer + bridge",
+      "folder": "03-effects/E11-composer",
+      "deps": [],
+      "files": [
+        "src/odin/compose.ts",
+        "src/ui/scene/SceneLayer.tsx",
+        "src/lib/homeLayout.ts",
+        "src/ui/bridge.tsx",
+        "src/odin/types.ts"
+      ]
+    }
+  ],
+  "views": [
+    {
+      "id": "S01",
+      "title": "Intro load-in",
+      "kind": "system",
+      "folder": "04-views/S01-intro-load-in",
+      "question": null,
+      "bq": [],
+      "feature": "—",
+      "status": "System",
+      "purpose": "ODIN appears: room, globe and capsules assemble with the intro pulse.",
+      "notes": null,
+      "template": null,
+      "components": [],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E03",
+        "E06",
+        "E07",
+        "E09",
+        "E10"
+      ],
+      "files": [
+        "src/ui/IntroDirector.tsx",
+        "src/ui/intro.css",
+        "src/lib/intro.ts"
+      ],
+      "shared": [],
+      "morphKeys": [],
+      "dataFields": [],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "S02",
+      "title": "Question composer",
+      "kind": "system",
+      "folder": "04-views/S02-question-composer",
+      "question": null,
+      "bq": [],
+      "feature": "—",
+      "status": "System",
+      "purpose": "Typed question or pick from the catalogue (required / all scope).",
+      "notes": null,
+      "template": null,
+      "components": [],
+      "objects3d": [],
+      "effects": [],
+      "files": [
+        "src/ui/hud/MicBar.tsx",
+        "src/ui/hud/QuestionPicker.tsx",
+        "src/ui/hud/hud.css",
+        "src/odin/questions.ts"
+      ],
+      "shared": [],
+      "morphKeys": [],
+      "dataFields": [],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "S03",
+      "title": "Thinking",
+      "kind": "system",
+      "folder": "04-views/S03-thinking",
+      "question": null,
+      "bq": [],
+      "feature": "—",
+      "status": "System",
+      "purpose": "The heard question is echoed while ODIN resolves the answer.",
+      "notes": null,
+      "template": null,
+      "components": [],
+      "objects3d": [],
+      "effects": [],
+      "files": [
+        "src/ui/hud/MicBar.tsx",
+        "src/ui/hud/hud.css"
+      ],
+      "shared": [],
+      "morphKeys": [],
+      "dataFields": [],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "S04",
+      "title": "Morph transition",
+      "kind": "system",
+      "folder": "04-views/S04-morph-transition",
+      "question": null,
+      "bq": [],
+      "feature": "—",
+      "status": "System",
+      "purpose": "Any screen to any screen: six choreographies, particles through ODIN, morph sound.",
+      "notes": null,
+      "template": null,
+      "components": [],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E09"
+      ],
+      "files": [
+        "src/odin/director.ts",
+        "src/odin/fx.ts",
+        "src/scene/TransitionParticles.tsx"
+      ],
+      "shared": [],
+      "morphKeys": [],
+      "dataFields": [],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "S05",
+      "title": "Speaking + summary",
+      "kind": "system",
+      "folder": "04-views/S05-speaking-summary",
+      "question": null,
+      "bq": [],
+      "feature": "—",
+      "status": "System",
+      "purpose": "ODIN speaks; the spectrum wraps the focus object and the summary strip captions it.",
+      "notes": null,
+      "template": null,
+      "components": [],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E03",
+        "E09"
+      ],
+      "files": [
+        "src/ui/hud/InsightStrip.tsx",
+        "src/ui/hud/hud.css",
+        "src/state/caption.ts",
+        "src/scene/SpectrumAura.tsx"
+      ],
+      "shared": [],
+      "morphKeys": [],
+      "dataFields": [],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V01",
+      "title": "Executive Home",
+      "kind": "screen",
+      "folder": "04-views/V01-executive-home",
+      "question": null,
+      "bq": [],
+      "feature": "Home",
+      "status": "Green",
+      "purpose": "Total applications in the globe with four live KPI capsules.",
+      "notes": "Card A (capsule). Data via HomeComposition props (HomeData).",
+      "template": null,
+      "components": [],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E03",
+        "E05",
+        "E06",
+        "E07",
+        "E08",
+        "E10"
+      ],
+      "files": [
+        "src/ui/home/HomeComposition.tsx",
+        "src/ui/home/KpiCapsule.tsx",
+        "src/ui/home/EnergyStreams.tsx",
+        "src/ui/home/home.css",
+        "src/ui/NumberRoll.tsx",
+        "src/ui/icons.tsx",
+        "src/lib/useDepthParallax.ts",
+        "src/lib/layout.ts"
+      ],
+      "shared": [],
+      "morphKeys": [
+        "home-energy",
+        "total-applications",
+        "home:vas-revenue",
+        "home:entered-today",
+        "home:approved-today",
+        "home:closure-rate"
+      ],
+      "dataFields": [],
+      "visualTolerance": 0.08
+    },
+    {
+      "id": "V02",
+      "title": "Applications in Processing",
+      "kind": "screen",
+      "folder": "04-views/V02-applications-in-processing",
+      "question": "How many visa applications are being processed?",
+      "bq": [
+        "BQ01"
+      ],
+      "feature": "F05",
+      "status": "Green",
+      "purpose": "Live inventory in processing, today’s movement and where the queue sits.",
+      "notes": "Card A (capsule) board around the glass orb.",
+      "template": "board",
+      "components": [
+        "board",
+        "metric"
+      ],
+      "objects3d": [
+        "orb"
+      ],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Board.tsx",
+        "src/ui/scene/components/board.css",
+        "src/ui/home/KpiCapsule.tsx",
+        "src/ui/home/EnergyStreams.tsx",
+        "src/ui/scene/components/Panels.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "board"
+      ],
+      "dataFields": [
+        {
+          "kind": "board",
+          "key": "board",
+          "fields": [
+            "hero",
+            "orb",
+            "capsules",
+            "stagesTitle",
+            "stages"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "in-proc-hero",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "hero",
+            "caption"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "entered-today",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "delta"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "decided-today",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption"
+          ]
+        }
+      ],
+      "visualTolerance": 0.05
+    },
+    {
+      "id": "V03",
+      "title": "Application Outcomes",
+      "kind": "screen",
+      "folder": "04-views/V03-application-outcomes",
+      "question": "How many visas have been approved?",
+      "bq": [
+        "BQ02",
+        "BQ03"
+      ],
+      "feature": "F06",
+      "status": "Green",
+      "purpose": "Approved, rejected, closed and in processing on a 3D donut.",
+      "notes": null,
+      "template": "outcomes",
+      "components": [
+        "metric",
+        "donut",
+        "facts"
+      ],
+      "objects3d": [
+        "donut"
+      ],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Panels.tsx",
+        "src/ui/scene/components/Donut.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "total-applications",
+        "donut",
+        "facts"
+      ],
+      "dataFields": [
+        {
+          "kind": "metric",
+          "key": "total-applications",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption"
+          ]
+        },
+        {
+          "kind": "donut",
+          "key": "donut",
+          "fields": [
+            "total",
+            "totalLabel",
+            "basis",
+            "segments"
+          ]
+        },
+        {
+          "kind": "facts",
+          "key": "facts",
+          "fields": [
+            "title",
+            "items",
+            "ring"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V04",
+      "title": "Outcome Distribution",
+      "kind": "screen",
+      "folder": "04-views/V04-outcome-distribution",
+      "question": "What percentage of visa applications have been closed?",
+      "bq": [
+        "BQ26"
+      ],
+      "feature": "F06",
+      "status": "Green",
+      "purpose": "Closure rate with the full status split and four headline cards.",
+      "notes": "Card C (hero glass) headline cards.",
+      "template": "ringCards",
+      "components": [
+        "donut",
+        "legend",
+        "metric"
+      ],
+      "objects3d": [
+        "donut"
+      ],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Donut.tsx",
+        "src/ui/scene/components/Panels.tsx",
+        "src/ui/scene/HeroGlass.tsx",
+        "src/ui/scene/hero-glass.css"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "ring",
+        "legend",
+        "total-applications",
+        "in-proc",
+        "approved-today",
+        "closure"
+      ],
+      "dataFields": [
+        {
+          "kind": "donut",
+          "key": "ring",
+          "fields": [
+            "total",
+            "totalLabel",
+            "basis",
+            "segments",
+            "clean"
+          ]
+        },
+        {
+          "kind": "legend",
+          "key": "legend",
+          "fields": [
+            "items"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "total-applications",
+          "fields": [
+            "tile",
+            "card",
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption",
+            "spark",
+            "ask"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "in-proc",
+          "fields": [
+            "tile",
+            "card",
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption",
+            "spark",
+            "ask"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "approved-today",
+          "fields": [
+            "tile",
+            "card",
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "delta",
+            "spark",
+            "ask"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "closure",
+          "fields": [
+            "tile",
+            "card",
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption",
+            "delta",
+            "spark",
+            "ask"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V05",
+      "title": "Processing Time Matrix · online",
+      "kind": "screen",
+      "folder": "04-views/V05-processing-time-matrix-online",
+      "question": "How long does it take to process a visa?",
+      "bq": [
+        "BQ04",
+        "BQ07"
+      ],
+      "feature": "F11 · F12a",
+      "status": "Green",
+      "purpose": "End-to-end time in ODIN, six duration cards and the stage-wise strip.",
+      "notes": "Fixed 1920×1080 frame scaled to fit (wide). SLA shown as Not available (threshold not agreed).",
+      "template": "matrix",
+      "components": [
+        "timeMatrix"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E05",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/TimeMatrix.tsx",
+        "src/ui/scene/components/TimeMatrixWide.tsx",
+        "src/ui/scene/components/matrix.css",
+        "src/ui/home/EnergyStreams.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "tm"
+      ],
+      "dataFields": [
+        {
+          "kind": "timeMatrix",
+          "key": "tm",
+          "fields": [
+            "scopeLabel",
+            "avg",
+            "avgDelta",
+            "median",
+            "medianDelta",
+            "p90",
+            "applications",
+            "hourly",
+            "fastest",
+            "longest",
+            "stages",
+            "tabs",
+            "sla",
+            "previewNote"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V06",
+      "title": "Processing Time Matrix · centre visits",
+      "kind": "screen",
+      "folder": "04-views/V06-processing-time-matrix-centre-visits",
+      "question": "Show the centre processing time matrix",
+      "bq": [],
+      "feature": "F26",
+      "status": "Red",
+      "purpose": "The same matrix for centre visit stages.",
+      "notes": null,
+      "template": "matrix",
+      "components": [
+        "timeMatrix"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E05",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/TimeMatrix.tsx",
+        "src/ui/scene/components/TimeMatrixWide.tsx",
+        "src/ui/scene/components/matrix.css",
+        "src/ui/home/EnergyStreams.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "tm"
+      ],
+      "dataFields": [
+        {
+          "kind": "timeMatrix",
+          "key": "tm",
+          "fields": [
+            "scopeLabel",
+            "avg",
+            "avgDelta",
+            "median",
+            "medianDelta",
+            "p90",
+            "applications",
+            "hourly",
+            "fastest",
+            "longest",
+            "stages",
+            "tabs",
+            "sla"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V07",
+      "title": "Time Matrix · focus stage",
+      "kind": "screen",
+      "folder": "04-views/V07-time-matrix-focus-stage",
+      "question": "How quickly does VAS process and submit applications to ICP?",
+      "bq": [
+        "BQ08",
+        "BQ09",
+        "BQ10"
+      ],
+      "feature": "F23 · F24 · F25",
+      "status": "Red",
+      "purpose": "The matrix with one stage highlighted (VAS→ICP, with ICP, biometrics).",
+      "notes": "Biometric split is a design preview (F25 red).",
+      "template": "matrix",
+      "components": [
+        "timeMatrix"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E05",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/TimeMatrix.tsx",
+        "src/ui/scene/components/TimeMatrixWide.tsx",
+        "src/ui/scene/components/matrix.css",
+        "src/ui/home/EnergyStreams.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "tm"
+      ],
+      "dataFields": [
+        {
+          "kind": "timeMatrix",
+          "key": "tm",
+          "fields": [
+            "scopeLabel",
+            "avg",
+            "avgDelta",
+            "median",
+            "medianDelta",
+            "p90",
+            "applications",
+            "hourly",
+            "fastest",
+            "longest",
+            "stages",
+            "focusStage",
+            "tabs",
+            "sla",
+            "previewNote"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V08",
+      "title": "VAS Revenue",
+      "kind": "screen",
+      "folder": "04-views/V08-vas-revenue",
+      "question": "How much revenue is being generated?",
+      "bq": [
+        "BQ05",
+        "BQ27"
+      ],
+      "feature": "F13a · F13b",
+      "status": "Validation",
+      "purpose": "Revenue total and breakdown by country, centre, service and nationality.",
+      "notes": "Always labelled “Validation required” until AEGI Finance approves the definition.",
+      "template": "stage",
+      "components": [
+        "revenue"
+      ],
+      "objects3d": [
+        "plinths"
+      ],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Jars.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "revenue"
+      ],
+      "dataFields": [
+        {
+          "kind": "revenue",
+          "key": "revenue",
+          "fields": [
+            "preview",
+            "validation",
+            "amount",
+            "delta",
+            "dims"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V09",
+      "title": "Online Visa Journey",
+      "kind": "screen",
+      "folder": "04-views/V09-online-visa-journey",
+      "question": "Show the online visa journey",
+      "bq": [],
+      "feature": "F07a",
+      "status": "Green",
+      "purpose": "Traveller walks the online journey on the floor; each stage lights up with its metric.",
+      "notes": "Floor camera push + auto blur. Keeps its own cards (not in the A/B/C card system yet).",
+      "template": "floor",
+      "components": [
+        "metric",
+        "journey"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Panels.tsx",
+        "src/ui/scene/components/Journey.tsx",
+        "src/ui/scene/components/journeyGeometry.ts",
+        "src/ui/scene/components/JourneyFloor.tsx",
+        "src/ui/scene/components/floorJourney.ts",
+        "src/ui/scene/components/floor.css"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "journey"
+      ],
+      "dataFields": [
+        {
+          "kind": "metric",
+          "key": "total-online",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption",
+            "delta",
+            "spark"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "e2e-online",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption",
+            "delta",
+            "spark"
+          ]
+        },
+        {
+          "kind": "journey",
+          "key": "journey",
+          "fields": [
+            "channel",
+            "stages",
+            "approved",
+            "rejected",
+            "emphasisKey",
+            "floor"
+          ]
+        }
+      ],
+      "visualTolerance": 0.2
+    },
+    {
+      "id": "V10",
+      "title": "Centre Visit Journey",
+      "kind": "screen",
+      "folder": "04-views/V10-centre-visit-journey",
+      "question": "Show the centre visit journey",
+      "bq": [],
+      "feature": "F07b",
+      "status": "Amber",
+      "purpose": "Appointment → payment → biometrics → interview on 3D pedestals.",
+      "notes": "Arrival at centre shown as Not available (event not captured yet).",
+      "template": "journey",
+      "components": [
+        "metric",
+        "journey"
+      ],
+      "objects3d": [
+        "pedestal"
+      ],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Panels.tsx",
+        "src/ui/scene/components/Journey.tsx",
+        "src/ui/scene/components/journeyGeometry.ts",
+        "src/ui/scene/HeroGlass.tsx",
+        "src/ui/scene/hero-glass.css"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "total-appointments",
+        "biometrics-captured",
+        "journey"
+      ],
+      "dataFields": [
+        {
+          "kind": "metric",
+          "key": "total-appointments",
+          "fields": [
+            "card",
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption",
+            "delta",
+            "spark"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "biometrics-captured",
+          "fields": [
+            "card",
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption",
+            "delta",
+            "spark"
+          ]
+        },
+        {
+          "kind": "journey",
+          "key": "journey",
+          "fields": [
+            "channel",
+            "stages",
+            "approved",
+            "rejected",
+            "outcomeLabels",
+            "emphasisLabel",
+            "emphasisKey"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V11",
+      "title": "Application Journey Map",
+      "kind": "screen",
+      "folder": "04-views/V11-application-journey-map",
+      "question": "Show the application journey map",
+      "bq": [],
+      "feature": "F07a",
+      "status": "Green",
+      "purpose": "End-to-end stages as orbs with volumes and average days.",
+      "notes": "Card C headline cards.",
+      "template": "journey",
+      "components": [
+        "metric",
+        "journey"
+      ],
+      "objects3d": [
+        "plinths"
+      ],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Panels.tsx",
+        "src/ui/scene/components/Showcase.tsx",
+        "src/ui/scene/HeroGlass.tsx",
+        "src/ui/scene/hero-glass.css"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "total-online",
+        "e2e-online",
+        "journey"
+      ],
+      "dataFields": [
+        {
+          "kind": "metric",
+          "key": "total-online",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption",
+            "delta",
+            "spark",
+            "card"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "e2e-online",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption",
+            "delta",
+            "spark",
+            "card"
+          ]
+        },
+        {
+          "kind": "journey",
+          "key": "journey",
+          "fields": [
+            "channel",
+            "stages",
+            "approved",
+            "rejected",
+            "emphasisKey",
+            "variant"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V12",
+      "title": "Centre Ranking by Time",
+      "kind": "screen",
+      "folder": "04-views/V12-centre-ranking-by-time",
+      "question": "How efficiently are individual centres processing applications?",
+      "bq": [
+        "BQ11"
+      ],
+      "feature": "F26",
+      "status": "Red",
+      "purpose": "Centres ranked by average processing days.",
+      "notes": null,
+      "template": "focus",
+      "components": [
+        "ranking",
+        "metric"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Panels.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "ranking",
+        "rank-lead",
+        "rank-second"
+      ],
+      "dataFields": [
+        {
+          "kind": "ranking",
+          "key": "ranking",
+          "fields": [
+            "title",
+            "basis",
+            "format",
+            "items",
+            "highlight",
+            "accent"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "rank-lead",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "rank-second",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V13",
+      "title": "Stage Queue · online",
+      "kind": "screen",
+      "folder": "04-views/V13-stage-queue-online",
+      "question": "Where are applications being delayed, and which stages need attention?",
+      "bq": [
+        "BQ13"
+      ],
+      "feature": "F12b",
+      "status": "Red",
+      "purpose": "Applications waiting at each stage with age bands.",
+      "notes": "Shows where applications wait; makes no causal claim.",
+      "template": "stage",
+      "components": [
+        "queue"
+      ],
+      "objects3d": [
+        "plinths"
+      ],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Jars.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "queue"
+      ],
+      "dataFields": [
+        {
+          "kind": "queue",
+          "key": "queue",
+          "fields": [
+            "items"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V14",
+      "title": "Stage Queue · centres",
+      "kind": "screen",
+      "folder": "04-views/V14-stage-queue-centres",
+      "question": "Show the centre stage queue",
+      "bq": [],
+      "feature": "F12b",
+      "status": "Red",
+      "purpose": "The stage queue for centre visits.",
+      "notes": null,
+      "template": "stage",
+      "components": [
+        "queue"
+      ],
+      "objects3d": [
+        "plinths"
+      ],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Jars.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "queue"
+      ],
+      "dataFields": [
+        {
+          "kind": "queue",
+          "key": "queue",
+          "fields": [
+            "items"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V15",
+      "title": "Performance Comparison",
+      "kind": "screen",
+      "folder": "04-views/V15-performance-comparison",
+      "question": "How does today's performance compare with yesterday?",
+      "bq": [
+        "BQ14",
+        "BQ15",
+        "BQ16",
+        "BQ17"
+      ],
+      "feature": "F14a · F14b",
+      "status": "Green",
+      "purpose": "Today, yesterday, last 7 days, previous 7 days and month to date.",
+      "notes": "Weekly/monthly comparisons (F14b) are red in scope v2.",
+      "template": "stage",
+      "components": [
+        "periods"
+      ],
+      "objects3d": [
+        "plinths"
+      ],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Jars.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "periods"
+      ],
+      "dataFields": [
+        {
+          "kind": "periods",
+          "key": "periods",
+          "fields": [
+            "items"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V16",
+      "title": "Top Countries, Nationalities & Centres",
+      "kind": "screen",
+      "folder": "04-views/V16-top-countries-nationalities-and-centres",
+      "question": "Which countries or nationalities generate the most applications?",
+      "bq": [
+        "BQ18",
+        "BQ22"
+      ],
+      "feature": "F08 · F10",
+      "status": "Green",
+      "purpose": "Top five by country of residence, nationality and centre.",
+      "notes": null,
+      "template": "stage",
+      "components": [
+        "podiums"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Showcase.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "podiums"
+      ],
+      "dataFields": [
+        {
+          "kind": "podiums",
+          "key": "podiums",
+          "fields": [
+            "columns"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V17",
+      "title": "Top Countries on the Globe",
+      "kind": "screen",
+      "folder": "04-views/V17-top-countries-on-the-globe",
+      "question": "Show top countries on the globe",
+      "bq": [],
+      "feature": "F08",
+      "status": "Green",
+      "purpose": "3D Earth with the top ten countries on plinths.",
+      "notes": null,
+      "template": "stage",
+      "components": [
+        "geo"
+      ],
+      "objects3d": [
+        "earth + plinths"
+      ],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Showcase.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "geo"
+      ],
+      "dataFields": [
+        {
+          "kind": "geo",
+          "key": "geo",
+          "fields": [
+            "heading",
+            "subheading",
+            "basis",
+            "period",
+            "items"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V18",
+      "title": "Channels Notice",
+      "kind": "screen",
+      "folder": "04-views/V18-channels-notice",
+      "question": "Are customers applying through physical centres or online?",
+      "bq": [
+        "BQ21"
+      ],
+      "feature": "F09",
+      "status": "Amber",
+      "purpose": "All applications are submitted online; centres handle visits only.",
+      "notes": null,
+      "template": "notice",
+      "components": [
+        "notice"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Panels.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "notice"
+      ],
+      "dataFields": [
+        {
+          "kind": "notice",
+          "key": "notice",
+          "fields": [
+            "title",
+            "text",
+            "suggestions"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V19",
+      "title": "Compare Side by Side",
+      "kind": "screen",
+      "folder": "04-views/V19-compare-side-by-side",
+      "question": "Compare India and Pakistan",
+      "bq": [],
+      "feature": "F08",
+      "status": "Green",
+      "purpose": "Two countries compared measure by measure.",
+      "notes": null,
+      "template": "focus",
+      "components": [
+        "compare"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Panels.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "compare"
+      ],
+      "dataFields": [
+        {
+          "kind": "compare",
+          "key": "compare",
+          "fields": [
+            "sides"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V20",
+      "title": "Travel Purpose Mix",
+      "kind": "screen",
+      "folder": "04-views/V20-travel-purpose-mix",
+      "question": "Are applicants travelling for tourism, business, healthcare or other purposes?",
+      "bq": [
+        "BQ19"
+      ],
+      "feature": "F27",
+      "status": "Red",
+      "purpose": "Share of applications by recorded visa purpose.",
+      "notes": "Post-October feature, mock values for design review.",
+      "template": "stage",
+      "components": [
+        "ring"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Showcase.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "ring"
+      ],
+      "dataFields": [
+        {
+          "kind": "ring",
+          "key": "ring",
+          "fields": [
+            "total",
+            "totalLabel",
+            "basis",
+            "segments"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V21",
+      "title": "Applicant Occupation Mix",
+      "kind": "screen",
+      "folder": "04-views/V21-applicant-occupation-mix",
+      "question": "What types of applicants are using VAS services?",
+      "bq": [
+        "BQ20"
+      ],
+      "feature": "F28",
+      "status": "Red",
+      "purpose": "Share of applications by recorded occupation.",
+      "notes": "Post-October feature, mock values for design review.",
+      "template": "stage",
+      "components": [
+        "ring"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Showcase.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "ring"
+      ],
+      "dataFields": [
+        {
+          "kind": "ring",
+          "key": "ring",
+          "fields": [
+            "total",
+            "totalLabel",
+            "basis",
+            "segments"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V22",
+      "title": "Applications (focus)",
+      "kind": "screen",
+      "folder": "04-views/V22-applications-focus",
+      "question": "How many applications from India?",
+      "bq": [],
+      "feature": "F05 · F08",
+      "status": "Green",
+      "purpose": "Application count for any filter, with status bars.",
+      "notes": "Reached by free-text questions with filters (country, centre, visa type).",
+      "template": "focus",
+      "components": [
+        "metric",
+        "bars"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Panels.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "apps-hero",
+        "status-bars",
+        "in-proc",
+        "approval-rate"
+      ],
+      "dataFields": [
+        {
+          "kind": "metric",
+          "key": "apps-hero",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "hero",
+            "caption"
+          ]
+        },
+        {
+          "kind": "bars",
+          "key": "status-bars",
+          "fields": [
+            "title",
+            "basis",
+            "format",
+            "accent",
+            "items"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "in-proc",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "approval-rate",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V23",
+      "title": "Processing Time (focus)",
+      "kind": "screen",
+      "folder": "04-views/V23-processing-time-focus",
+      "question": "Average processing time for India",
+      "bq": [],
+      "feature": "F11",
+      "status": "Green",
+      "purpose": "Average processing time for any filter vs the overall average.",
+      "notes": "Reached by free-text questions with filters.",
+      "template": "focus",
+      "components": [
+        "metric",
+        "bars"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Panels.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "avg-time",
+        "stage-times",
+        "apps-slice",
+        "in-proc-slice"
+      ],
+      "dataFields": [
+        {
+          "kind": "metric",
+          "key": "avg-time",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "hero",
+            "caption",
+            "delta"
+          ]
+        },
+        {
+          "kind": "bars",
+          "key": "stage-times",
+          "fields": [
+            "title",
+            "basis",
+            "format",
+            "accent",
+            "items"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "apps-slice",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption"
+          ]
+        },
+        {
+          "kind": "metric",
+          "key": "in-proc-slice",
+          "fields": [
+            "label",
+            "value",
+            "format",
+            "icon",
+            "accent",
+            "caption"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V24",
+      "title": "Not Available Yet",
+      "kind": "screen",
+      "folder": "04-views/V24-not-available-yet",
+      "question": "How long do applications remain with individual reviewers?",
+      "bq": [
+        "BQ06",
+        "BQ12",
+        "BQ23",
+        "BQ24",
+        "BQ25",
+        "BQ28",
+        "BQ29",
+        "BQ30",
+        "BQ31"
+      ],
+      "feature": "—",
+      "status": "Out",
+      "purpose": "Honest notice: why this question cannot be answered yet and what to ask instead.",
+      "notes": null,
+      "template": "notice",
+      "components": [
+        "notice"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Panels.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "notice"
+      ],
+      "dataFields": [
+        {
+          "kind": "notice",
+          "key": "notice",
+          "fields": [
+            "title",
+            "text",
+            "suggestions"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    },
+    {
+      "id": "V25",
+      "title": "Didn’t Understand",
+      "kind": "screen",
+      "folder": "04-views/V25-didnt-understand",
+      "question": "What is the weather in Dubai?",
+      "bq": [],
+      "feature": "—",
+      "status": "System",
+      "purpose": "Fallback when a question is outside ODIN’s data, with suggested questions.",
+      "notes": null,
+      "template": "notice",
+      "components": [
+        "notice"
+      ],
+      "objects3d": [],
+      "effects": [
+        "E00",
+        "E01",
+        "E02",
+        "E03",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E11"
+      ],
+      "files": [
+        "src/ui/scene/components/Panels.tsx"
+      ],
+      "shared": [
+        "src/ui/scene/components/shared.tsx",
+        "src/ui/scene/SceneIcon.tsx",
+        "src/ui/bridge.tsx",
+        "src/lib/format.ts",
+        "src/lib/homeLayout.ts"
+      ],
+      "morphKeys": [
+        "notice"
+      ],
+      "dataFields": [
+        {
+          "kind": "notice",
+          "key": "notice",
+          "fields": [
+            "title",
+            "text",
+            "suggestions"
+          ]
+        }
+      ],
+      "visualTolerance": 0.03
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "$ref": "#/definitions/HomeData",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "DataState": {
+      "description": "Answer/data contracts for the creative build. Mirrors the scene contract proposed in Magic Box 04 so engineering can map it to the real API.",
+      "enum": [
+        "valid",
+        "zero",
+        "unavailable",
+        "stale",
+        "error"
+      ],
+      "type": "string"
+    },
+    "Delta": {
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "description": "Plain-language comparison basis, always shown with the delta.",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "count",
+            "pp",
+            "percent"
+          ],
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "unit",
+        "basis"
+      ],
+      "type": "object"
+    },
+    "HomeData": {
+      "additionalProperties": false,
+      "properties": {
+        "asOf": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "orbs": {
+          "items": {
+            "$ref": "#/definitions/Kpi"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        "total": {
+          "$ref": "#/definitions/Kpi"
+        }
+      },
+      "required": [
+        "total",
+        "orbs",
+        "asOf"
+      ],
+      "type": "object"
+    },
+    "Kpi": {
+      "additionalProperties": false,
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "delta": {
+          "$ref": "#/definitions/Delta"
+        },
+        "detail": {
+          "description": "Secondary line shown under the value when there is no delta.",
+          "type": "string"
+        },
+        "featureIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "format": {
+          "$ref": "#/definitions/KpiFormat"
+        },
+        "id": {
+          "type": "string"
+        },
+        "kpiIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "label": {
+          "type": "string"
+        },
+        "note": {
+          "description": "Status note shown under the value when there is no delta (e.g. \"Validation required\").",
+          "type": "string"
+        },
+        "qualifier": {
+          "description": "Short qualifier under the label, e.g. period or population.",
+          "type": "string"
+        },
+        "state": {
+          "$ref": "#/definitions/DataState"
+        },
+        "unavailableReason": {
+          "description": "Shown instead of a value when state is unavailable.",
+          "type": "string"
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "value",
+        "format",
+        "state",
+        "featureIds",
+        "kpiIds"
+      ],
+      "type": "object"
+    },
+    "KpiFormat": {
+      "enum": [
+        "count",
+        "percent",
+        "currency"
+      ],
+      "type": "string"
+    }
+  }
+}

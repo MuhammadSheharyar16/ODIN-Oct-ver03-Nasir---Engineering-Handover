@@ -1,0 +1,35 @@
+{
+  "id": "scene-24",
+  "intent": {
+    "type": "unsupported",
+    "text": "What is the weather in Dubai?"
+  },
+  "template": "notice",
+  "title": "I can help with these",
+  "subtitle": "Questions about VAS applications, journeys, outcomes and timings",
+  "focusKey": "notice",
+  "presence": "dissolved",
+  "components": [
+    {
+      "spec": {
+        "kind": "notice",
+        "key": "notice",
+        "title": "I didn't catch a question I can answer",
+        "text": "Try asking about applications, the online or centre journey, outcomes, processing times, or compare countries and centres.",
+        "suggestions": [
+          "Show the online visa journey",
+          "Show the centre visit journey",
+          "What are the application outcomes?",
+          "How long do tourist visas from India take?",
+          "Top countries by applications"
+        ]
+      },
+      "slot": "hero"
+    }
+  ],
+  "spoken": "I'm not able to answer that yet. You can ask about applications, journeys, outcomes or processing times.",
+  "summary": {
+    "primary": "I can't answer that yet.",
+    "secondary": "Ask about applications, journeys, outcomes or processing times."
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "id": "scene-2",
+  "intent": {
+    "type": "outcomes",
+    "filters": {}
+  },
+  "template": "outcomes",
+  "title": "Application Outcomes",
+  "subtitle": "Current status of every application since launch",
+  "focusKey": "donut",
+  "presence": "core",
+  "components": [
+    {
+      "spec": {
+        "kind": "metric",
+        "key": "total-applications",
+        "label": "Total applications",
+        "value": 8412,
+        "format": "count",
+        "icon": "applications",
+        "accent": "#4f9cff",
+        "caption": "since launch"
+      },
+      "slot": "tl"
+    },
+    {
+      "spec": {
+        "kind": "donut",
+        "key": "donut",
+        "total": 8412,
+        "totalLabel": "Total applications",
+        "basis": "Current status · each application counted once",
+        "segments": [
+          {
+            "key": "approved",
+            "label": "Approved",
+            "count": 5211,
+            "accent": "#3ed6a0"
+          },
+          {
+            "key": "processing",
+            "label": "In processing",
+            "count": 2140,
+            "accent": "#4f9cff"
+          },
+          {
+            "key": "rejected",
+            "label": "Rejected",
+            "count": 792,
+            "accent": "#ff5d6c"
+          },
+          {
+            "key": "closed",
+            "label": "Closed · other",
+            "count": 269,
+            "accent": "#a67cff"
+          }
+        ]
+      },
+      "slot": "main"
+    },
+    {
+      "spec": {
+        "kind": "facts",
+        "key": "facts",
+        "title": "Key facts",
+        "items": [
+          {
+            "icon": "approved",
+            "text": "5,211 approved",
+            "sub": "61.9% of all applications",
+            "accent": "#3ed6a0"
+          },
+          {
+            "icon": "rejected",
+            "text": "792 rejected",
+            "sub": "13.2% of decisions",
+            "accent": "#ff5d6c"
+          },
+          {
+            "icon": "processing",
+            "text": "2,140 in processing",
+            "sub": "awaiting a final decision",
+            "accent": "#4f9cff"
+          }
+        ],
+        "ring": {
+          "label": "Closure rate",
+          "value": 74.56015216357585,
+          "basis": "closed ÷ all applications"
+        }
+      },
+      "slot": "tr"
+    }
+  ],
+  "spoken": "Of 8,412 applications, 5,211 have been approved and 792 rejected. 2,140 are still in processing, which puts the closure rate at 74.6%.",
+  "summary": {
+    "primary": "5,211 approved, 792 rejected, 2,140 in processing.",
+    "secondary": "Closure rate 74.6% of 8,412 applications."
+  }
+}

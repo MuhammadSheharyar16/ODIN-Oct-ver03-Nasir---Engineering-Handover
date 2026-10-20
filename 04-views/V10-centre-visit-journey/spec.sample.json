@@ -1,0 +1,164 @@
+{
+  "id": "scene-9",
+  "intent": {
+    "type": "journey",
+    "channel": "centre",
+    "filters": {}
+  },
+  "template": "journey",
+  "title": "Centre Visit Journey",
+  "subtitle": "Centre visits after online submission: appointment, payment, biometrics and interview",
+  "focusKey": "journey",
+  "presence": "dissolved",
+  "components": [
+    {
+      "spec": {
+        "kind": "metric",
+        "key": "total-appointments",
+        "card": "hero",
+        "label": "Appointments booked",
+        "value": 2860,
+        "format": "count",
+        "icon": "centre",
+        "accent": "#f5ac45",
+        "caption": "since launch",
+        "delta": {
+          "value": 7.3,
+          "unit": "percent",
+          "basis": "vs yesterday"
+        },
+        "spark": {
+          "kind": "bars",
+          "values": [
+            21,
+            28,
+            34,
+            29,
+            31,
+            31,
+            29,
+            25,
+            20,
+            14
+          ]
+        }
+      },
+      "slot": "tl"
+    },
+    {
+      "spec": {
+        "kind": "metric",
+        "key": "biometrics-captured",
+        "card": "hero",
+        "label": "Biometrics captured",
+        "value": 2574,
+        "format": "count",
+        "icon": "approved",
+        "accent": "#3ed6a0",
+        "caption": "at centres",
+        "delta": {
+          "value": 9.4,
+          "unit": "percent",
+          "basis": "vs yesterday"
+        },
+        "spark": {
+          "kind": "bars",
+          "values": [
+            19,
+            25,
+            31,
+            26,
+            28,
+            28,
+            26,
+            23,
+            18,
+            13
+          ]
+        }
+      },
+      "slot": "tr"
+    },
+    {
+      "spec": {
+        "kind": "journey",
+        "key": "journey",
+        "channel": "centre",
+        "stages": [
+          {
+            "key": "appointment",
+            "label": "Appointment booked",
+            "icon": "calendar",
+            "accent": "#f5ac45",
+            "count": 2860,
+            "days": 1.2,
+            "delta": 11.7
+          },
+          {
+            "key": "arrived",
+            "label": "Arrived at centre",
+            "sub": "arrival not yet captured",
+            "icon": "checkin",
+            "accent": "#8b96ad",
+            "count": 2717,
+            "days": 0,
+            "unavailable": true
+          },
+          {
+            "key": "payment",
+            "label": "Payment at centre",
+            "sub": "POS or cash",
+            "icon": "payment",
+            "accent": "#f7bb5a",
+            "count": 1773,
+            "days": 0.1,
+            "delta": 12.9
+          },
+          {
+            "key": "biometrics",
+            "label": "Biometrics captured",
+            "icon": "biometric",
+            "accent": "#f2c46e",
+            "count": 2574,
+            "days": 0.1,
+            "delta": 9.4
+          },
+          {
+            "key": "interview",
+            "label": "Interview",
+            "sub": "when required",
+            "icon": "review",
+            "accent": "#c9a3ff",
+            "count": 229,
+            "days": 0.2,
+            "delta": 7.3
+          }
+        ],
+        "approved": {
+          "count": 2460,
+          "days": 1.4,
+          "delta": 9.6
+        },
+        "rejected": {
+          "count": 0,
+          "days": 0,
+          "unavailable": true
+        },
+        "outcomeLabels": {
+          "good": "Visit completed",
+          "bad": "Missed or rescheduled",
+          "goodShort": "Completed",
+          "badShort": "Missed"
+        },
+        "emphasisLabel": "Highest volume",
+        "emphasisKey": "appointment"
+      },
+      "slot": "main"
+    }
+  ],
+  "spoken": "There are 2,860 centre appointments booked. 2,574 biometrics have been captured and 2,460 visits are complete. Arrival at the centre isn't captured yet, so that stage is not available.",
+  "summary": {
+    "primary": "2,860 centre appointments · 2,574 biometrics captured.",
+    "secondary": "2,460 visits complete · arrival events not yet captured."
+  }
+}

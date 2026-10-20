@@ -1,0 +1,105 @@
+{
+  "id": "scene-22",
+  "intent": {
+    "type": "time",
+    "filters": {
+      "country": "IN"
+    }
+  },
+  "template": "focus",
+  "title": "Processing Time",
+  "subtitle": "Average time from submission to final decision · From India",
+  "focusKey": "avg-time",
+  "presence": "dissolved",
+  "components": [
+    {
+      "spec": {
+        "kind": "metric",
+        "key": "avg-time",
+        "label": "Average processing time",
+        "value": 3.6,
+        "format": "days",
+        "icon": "clock",
+        "accent": "#4fd6ff",
+        "hero": true,
+        "caption": "from India",
+        "delta": {
+          "value": -0.2,
+          "unit": "days",
+          "basis": "vs overall 3.8 days",
+          "goodWhen": "down"
+        }
+      },
+      "slot": "hero"
+    },
+    {
+      "spec": {
+        "kind": "bars",
+        "key": "stage-times",
+        "title": "Time at each stage · online journey",
+        "basis": "average days per stage",
+        "format": "days",
+        "accent": "#a67cff",
+        "items": [
+          {
+            "key": "submission",
+            "label": "Application submission",
+            "value": 0.4
+          },
+          {
+            "key": "payment",
+            "label": "Payment",
+            "value": 0.2
+          },
+          {
+            "key": "vas-review",
+            "label": "VAS internal review",
+            "value": 0.6
+          },
+          {
+            "key": "to-icp",
+            "label": "Submission to ICP",
+            "value": 0.4
+          },
+          {
+            "key": "icp",
+            "label": "ICP processing",
+            "value": 2.1
+          }
+        ]
+      },
+      "slot": "right"
+    },
+    {
+      "spec": {
+        "kind": "metric",
+        "key": "apps-slice",
+        "label": "Applications",
+        "value": 1422,
+        "format": "count",
+        "icon": "applications",
+        "accent": "#4f9cff",
+        "caption": "from India"
+      },
+      "slot": "left1"
+    },
+    {
+      "spec": {
+        "kind": "metric",
+        "key": "in-proc-slice",
+        "label": "In processing now",
+        "value": 360,
+        "format": "count",
+        "icon": "processing",
+        "accent": "#f5ac45",
+        "caption": "awaiting decision"
+      },
+      "slot": "left2"
+    }
+  ],
+  "spoken": "Applications from India take 3.6 days on average from submission to decision, 0.2 days shorter than the overall average of 3.8 days. The longest stage is ICP processing, at 2.1 days.",
+  "summary": {
+    "primary": "3.6 days average processing time from India.",
+    "secondary": "Longest stage: ICP processing (2.1 days) · overall average 3.8 days."
+  }
+}

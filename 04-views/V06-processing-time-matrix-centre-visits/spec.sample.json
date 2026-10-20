@@ -1,0 +1,112 @@
+{
+  "id": "scene-5",
+  "intent": {
+    "type": "timeMatrix",
+    "channel": "centre",
+    "filters": {}
+  },
+  "template": "matrix",
+  "title": "Centre Visit Processing Time Matrix",
+  "subtitle": "Executive view of centre visit processing times",
+  "focusKey": "tm",
+  "presence": "core",
+  "components": [
+    {
+      "spec": {
+        "kind": "timeMatrix",
+        "key": "tm",
+        "scopeLabel": "centre visits",
+        "avg": 1.4,
+        "avgDelta": -2.6,
+        "median": 1.1,
+        "medianDelta": -3.8,
+        "p90": 2.3,
+        "applications": 2860,
+        "hourly": [
+          17,
+          27,
+          30,
+          24,
+          15,
+          27,
+          34,
+          32,
+          15,
+          18,
+          30,
+          32
+        ],
+        "fastest": {
+          "key": "payment",
+          "label": "Payment at centre",
+          "icon": "payment",
+          "accent": "#f7bb5a",
+          "days": 0.1
+        },
+        "longest": {
+          "key": "appointment",
+          "label": "Appointment booked",
+          "icon": "calendar",
+          "accent": "#f5ac45",
+          "days": 1.2
+        },
+        "stages": [
+          {
+            "key": "appointment",
+            "label": "Appointment booked",
+            "icon": "calendar",
+            "accent": "#f5ac45",
+            "days": 1.2
+          },
+          {
+            "key": "payment",
+            "label": "Payment at centre",
+            "icon": "payment",
+            "accent": "#f7bb5a",
+            "days": 0.1
+          },
+          {
+            "key": "biometrics",
+            "label": "Biometrics captured",
+            "icon": "biometric",
+            "accent": "#f2c46e",
+            "days": 0.1
+          },
+          {
+            "key": "interview",
+            "label": "Interview",
+            "icon": "review",
+            "accent": "#c9a3ff",
+            "days": 0.2
+          }
+        ],
+        "tabs": [
+          {
+            "label": "All online visas",
+            "ask": "online visa processing time matrix"
+          },
+          {
+            "label": "Centre visits",
+            "ask": "centre processing time matrix",
+            "active": true
+          },
+          {
+            "label": "By country",
+            "ask": "which countries are slowest"
+          },
+          {
+            "label": "By centre",
+            "ask": "which centres are slowest"
+          }
+        ],
+        "sla": null
+      },
+      "slot": "stage"
+    }
+  ],
+  "spoken": "Centre visit applications take 1.4 days on average end to end, with a median of 1.1 days and 90 percent finishing within 2.3 days. The longest stage is Appointment booked at 1.2 days; the fastest is Payment at centre at 0.1 days.",
+  "summary": {
+    "primary": "1.4 days average end-to-end processing time.",
+    "secondary": "Median 1.1 days · P90 2.3 days · longest stage Appointment booked (1.2 days)."
+  }
+}

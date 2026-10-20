@@ -1,0 +1,104 @@
+{
+  "id": "scene-18",
+  "intent": {
+    "type": "compare",
+    "entities": [
+      {
+        "kind": "country",
+        "key": "IN"
+      },
+      {
+        "kind": "country",
+        "key": "PK"
+      }
+    ],
+    "filters": {}
+  },
+  "template": "focus",
+  "title": "India vs Pakistan",
+  "subtitle": "Same period and definitions · side-by-side",
+  "focusKey": "compare",
+  "presence": "dissolved",
+  "components": [
+    {
+      "spec": {
+        "kind": "compare",
+        "key": "compare",
+        "sides": [
+          {
+            "key": "IN",
+            "code": "IN",
+            "label": "India",
+            "accent": "#4f9cff",
+            "rows": [
+              {
+                "label": "Applications",
+                "value": 1422,
+                "format": "count"
+              },
+              {
+                "label": "Approved",
+                "value": 894,
+                "format": "count"
+              },
+              {
+                "label": "In processing",
+                "value": 360,
+                "format": "count"
+              },
+              {
+                "label": "Approval rate",
+                "value": 88,
+                "format": "percent"
+              },
+              {
+                "label": "Avg processing time",
+                "value": 3.6,
+                "format": "days"
+              }
+            ]
+          },
+          {
+            "key": "PK",
+            "code": "PK",
+            "label": "Pakistan",
+            "accent": "#a67cff",
+            "rows": [
+              {
+                "label": "Applications",
+                "value": 1102,
+                "format": "count"
+              },
+              {
+                "label": "Approved",
+                "value": 643,
+                "format": "count"
+              },
+              {
+                "label": "In processing",
+                "value": 283,
+                "format": "count"
+              },
+              {
+                "label": "Approval rate",
+                "value": 82,
+                "format": "percent"
+              },
+              {
+                "label": "Avg processing time",
+                "value": 4.3,
+                "format": "days"
+              }
+            ]
+          }
+        ]
+      },
+      "slot": "wide"
+    }
+  ],
+  "spoken": "India has 1,422 applications and Pakistan has 1,102. Average processing time is 3.6 days for India and 4.3 days for Pakistan; approval rates are 88.0% and 82.0%.",
+  "summary": {
+    "primary": "India: 1,422 applications · Pakistan: 1,102.",
+    "secondary": "Avg time 3.6 days vs 4.3 days · approval 88.0% vs 82.0%."
+  }
+}

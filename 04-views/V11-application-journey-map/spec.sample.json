@@ -1,0 +1,155 @@
+{
+  "id": "scene-10",
+  "intent": {
+    "type": "journeyMap"
+  },
+  "template": "journey",
+  "title": "Application Journey Map",
+  "subtitle": "End-to-end application journey with volumes and average time at each stage",
+  "focusKey": "journey",
+  "presence": "dissolved",
+  "components": [
+    {
+      "spec": {
+        "kind": "metric",
+        "key": "total-online",
+        "label": "Total online applications",
+        "value": 8412,
+        "format": "count",
+        "icon": "applications",
+        "accent": "#4f9cff",
+        "caption": "since launch",
+        "delta": {
+          "value": 5.4,
+          "unit": "percent",
+          "basis": "vs yesterday"
+        },
+        "spark": {
+          "kind": "bars",
+          "values": [
+            15,
+            22,
+            28,
+            32,
+            34,
+            34,
+            32,
+            28,
+            23,
+            8
+          ]
+        },
+        "card": "hero"
+      },
+      "slot": "tl"
+    },
+    {
+      "spec": {
+        "kind": "metric",
+        "key": "e2e-online",
+        "label": "Average end-to-end time",
+        "value": 3.8,
+        "format": "days",
+        "icon": "clock",
+        "accent": "#4fd6ff",
+        "caption": "submission to final decision",
+        "delta": {
+          "value": -0.2,
+          "unit": "days",
+          "basis": "vs yesterday",
+          "goodWhen": "down"
+        },
+        "spark": {
+          "kind": "line",
+          "values": [
+            5.1,
+            4.9,
+            4.8,
+            4.9,
+            4.5,
+            4.4,
+            4.2,
+            4.3,
+            4,
+            3.8
+          ]
+        },
+        "card": "hero"
+      },
+      "slot": "tr"
+    },
+    {
+      "spec": {
+        "kind": "journey",
+        "key": "journey",
+        "channel": "online",
+        "stages": [
+          {
+            "key": "submission",
+            "label": "Application submission",
+            "icon": "submit",
+            "accent": "#4f9cff",
+            "count": 8412,
+            "days": 0.4,
+            "delta": -6.7
+          },
+          {
+            "key": "payment",
+            "label": "Payment",
+            "icon": "payment",
+            "accent": "#5aa8ff",
+            "count": 8092,
+            "days": 0.2,
+            "delta": 6.8
+          },
+          {
+            "key": "vas-review",
+            "label": "VAS internal review",
+            "icon": "review",
+            "accent": "#6db4ff",
+            "count": 7714,
+            "days": 0.6,
+            "delta": 11.1
+          },
+          {
+            "key": "to-icp",
+            "label": "Submission to ICP",
+            "icon": "upload",
+            "accent": "#7cc0ff",
+            "count": 7117,
+            "days": 0.4,
+            "delta": 9.8
+          },
+          {
+            "key": "icp",
+            "label": "ICP processing",
+            "sub": "Biometric & review",
+            "icon": "biometric",
+            "accent": "#9b8cff",
+            "count": 6393,
+            "days": 2.2,
+            "delta": -2.3
+          }
+        ],
+        "approved": {
+          "count": 5211,
+          "days": 3.1,
+          "delta": 9.7
+        },
+        "rejected": {
+          "count": 792,
+          "days": 2.6,
+          "delta": -5.1
+        },
+        "emphasisKey": "to-icp",
+        "variant": "orbs"
+      },
+      "slot": "main"
+    }
+  ],
+  "spoken": "There are 8,412 online applications on the journey. 5,211 have been approved and 792 rejected; end to end takes 3.8 days on average.",
+  "summary": {
+    "primary": "8,412 online applications on the journey · 5,211 approved · 792 rejected.",
+    "secondary": "1,534 took the biometric route · 3.8 days end to end on average."
+  }
+}
